@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>API 3 Exercice 3.3</title>
+        <script>
+            function showForm(selectedValue) {
+                var formContainers = document.getElementsByClassName('form-container');
+                for (var i = 0; i < formContainers.length; i++) {
+                    formContainers[i].style.display = 'none';
+                }
+
+                var selectedContainer = document.getElementById(selectedValue);
+                if (selectedContainer) {
+                    selectedContainer.style.display = 'block';
+                }
+            }
+
+            window.onload = function() {
+                showForm('');
+            };
+        </script>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+    </head>
+    <body>
+        <div id="box">
+            <h1>API3 Exercice 3.3 Lassoie Dylan</h1>
+
+            <label for="dropdown">Que voulez vous faire ?</label>
+            <select id="dropdown" onchange="showForm(this.value)">
+                <option value="">Select...</option>
+                <option value="createProj">Créer un projet</option>
+                <option value="deleteProj">Supprmier un projet</option>
+                <option value="modifyProj">Modifier un projet</option>
+                <option value="searchProj">Retrouver un projet</option>
+                <option value="allProj">Afficher tous les projets</option>
+                <option value="createDis">Créer une discipline</option>
+                <option value="deleteDis">Supprmier une discipline</option>
+                <option value="modifyDis">Modifier une discipline</option>
+                <option value="allDis">Afficher toute les disciplines</option>
+            </select>
+
+            <div id="createProj" class="form-container">
+                <h2>Créer un projet</h2>
+                <form action = "projet/create" method="get">
+                    nom : <input type="text" name="nom"> <br>
+                    date de début : <input type = "date" name="datedebut"> <br>
+                    date de fin : <input type = "date" name="datefin"> <br>
+                    coût du projet : <input type = "text" name="cout"> <br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="deleteProj" class="form-container">
+                <h2>Supprimer un projet</h2>
+                <form action="projet/delete" method="get">
+                    id du projet à supprimer : <input type="number" name="id"><br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="modifyProj" class="form-container">
+                <h2>Modifier un projet</h2>
+                <form action = "projet/modify" method="get">
+                    id du projet à modifier : <input type="text" name="id"> <br>
+                    nom : <input type = "text" name="nom"> <br>
+                    date de début : <input type = "date" name="datedebut"> <br>
+                    date de fin : <input type = "date" name="datefin"> <br>
+                    coût du projet : <input type = "text" name="cout"> <br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="searchProj" class="form-container">
+                <h2>Retrouver un projet</h2>
+                <form action="projet/rechercheParNom" method="get">
+                    nom : <input type="text" name="nom"><br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="allProj" class="form-container">
+                <h2>Afficher tous les projets</h2>
+                <a href="projet/all">liste projet</a>
+            </div>
+
+            <div id="createDis" class="form-container">
+                <h2>Créer une discipline</h2>
+                <form action = "discipline/create" method="get">
+                    nom : <input type="text" name="nom"> <br>
+                    description : <input type = "text" name="description"> <br>
+                    niveau : <input type = "number" name="niveau"> <br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="deleteDis" class="form-container">
+                <h2>Supprimer une discipline</h2>
+                <form action="discipline/delete" method="get">
+                    id de la discipline à supprimer : <input type="number" name="id"><br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="modifyDis" class="form-container">
+                <h2>Modifier une discipline</h2>
+                <form action = "discipline/modify" method="get">
+                    id de la discipline à modifier : <input type="text" name="id"> <br>
+                    nom : <input type = "text" name="nom"> <br>
+                    description : <input type = "text" name="description"> <br>
+                    niveau : <input type = "number" name="niveau"> <br>
+                    <button type="submit" name="ok" value="ok">OK</button>
+                </form>
+            </div>
+
+            <div id="allDis" class="form-container">
+                <h2>Afficher toute les discipline</h2>
+                <p><a href="discipline/all">liste discipline</a></p>
+            </div>
+        </div>
+    </body>
+</html>

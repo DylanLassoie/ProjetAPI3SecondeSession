@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Supprimer une discipline</title>
+</head>
+<body>
+<h1>Discipline supprimer</h1>
+<p>Nouvelle liste : </p><br>
+<table>
+    <th>NOM</th>
+    <th>DESCRIPTION</th>
+    <th>NIVEAU</th>
+    <tr th:each="uneDiscipline : ${mesDisciplines}">
+        <td th:text="${uneDiscipline.getNOM()}"/>
+        <td th:text="${uneDiscipline.getDESCRIPTION()}"/>
+        <td th:text="${uneDiscipline.getNIVEAU()}"/>
+    </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Supprimer un projet</title>
+</head>
+<body>
+<h1>Projet supprimer</h1>
+<p>Nouvelle liste : </p><br>
+<table>
+  <th>NOM</th>
+  <th>DATEDEBUT</th>
+  <th>DATEFIN</th>
+  <th>COUT</th>
+  <tr th:each="unProjet : ${mesProjets}">
+    <td th:text="${unProjet.getNOM()}"/>
+    <td th:text="${unProjet.getDATEDEBUT()}"/>
+    <td th:text="${unProjet.getDATEFIN()}"/>
+    <td th:text="${unProjet.getCOUT()}"/>
+  </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

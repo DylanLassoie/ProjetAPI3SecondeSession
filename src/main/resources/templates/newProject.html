@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajouter un projet</title>
+</head>
+<body>
+<table>
+  <th>NOM</th>
+  <th>DATEDEBUT</th>
+  <th>DATEFIN</th>
+  <th>COUT</th>
+  <tr>
+    <td th:text="${nouvproj.getNOM()}"/>
+    <td th:text="${nouvproj.getDATEDEBUT()}"/>
+    <td th:text="${nouvproj.getDATEFIN()}"/>
+    <td th:text="${nouvproj.getCOUT()}"/>
+  </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

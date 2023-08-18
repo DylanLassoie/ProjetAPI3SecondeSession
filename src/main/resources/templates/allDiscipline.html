@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Afficher toute les disciplines</title>
+</head>
+<body>
+<table border="1">
+  <th>ID</th>
+  <th>NOM</th>
+  <th>DESCRIPTION</th>
+  <th>NIVEAU</th>
+  <tr th:each="uneDiscipline : ${mesDisciplines}">
+    <td th:text="${uneDiscipline.getIDDISCIPLINE()}"/>
+    <td th:text="${uneDiscipline.getNOM()}"/>
+    <td th:text="${uneDiscipline.getDESCRIPTION()}"/>
+    <td th:text="${uneDiscipline.getNIVEAU()}"/>
+  </tr>
+</table>
+<a href ="/">retour</a>
+</body>
+</html>

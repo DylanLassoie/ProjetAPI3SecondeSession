@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajout Discipline</title>
+</head>
+<body>
+<table>
+    <th>NOM</th>
+    <th>DESCRIPTION</th>
+    <th>NIVEAU</th>
+    <tr>
+        <td th:text="${nouvdis.getNOM()}"/>
+        <td th:text="${nouvdis.getDESCRIPTION()}"/>
+        <td th:text="${nouvdis.getNIVEAU()}"/>
+    </tr>
+</table>
+<a href ="/static">retour</a>
+</body>
+</html>
